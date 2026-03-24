@@ -4,6 +4,22 @@
   padding: 0
 }
 
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 1000;
+  padding: 8px 16px;
+  background: #7a259a;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.skip-link:focus {
+  left: 0;
+}
+
 body {
   background-image: url(../assets/cubes.webp);
   font-family: "tablet-gothic", verdana, arial, sans-serif;
