@@ -43,15 +43,17 @@ layout: default
   <h1 style="margin-left:-50pt">Past Seminars</h1>
   <table id="seminar-schedule">
     {% assign curDate = site.time | date: '%s' | minus: 86400 | date:'%s' %}
+    {% assign academicYearStart = site.time | date: '%Y' | to_integer %}
+    {% assign month = site.time | date: '%m' | to_integer %}
+    {% if month < 8 %}{% assign academicYearStart = academicYearStart | minus: 1 %}{% endif %}
     {% for post in site.seminars reversed %}
     {% assign postStartDate = post.date | date: '%s' %}
     {% assign postYear = post.date | date: '%Y' | to_integer %}
     {% assign postMonth = post.date | date: '%m' | to_integer %}
-    {% assign lastYear = site.time | date: '%Y' | minus: 1 %}
-    {% assign month = site.time | date: '%m' | to_integer %}
-    {% if month < 8 %} {% assign startMonth=1 %} {% assign endMonth=7 %} {% else %} {% assign startMonth=8 %} {% assign
-      endMonth=12 %} {% endif %} {% if postStartDate < curDate and postYear > lastYear and postMonth >= startMonth and
-      postMonth <= endMonth %} <tr {% if post.invited %} class="invited" {% endif %}>
+    {% assign inAcademicYear = false %}
+    {% if postYear == academicYearStart and postMonth >= 8 %}{% assign inAcademicYear = true %}{% endif %}
+    {% if postYear > academicYearStart %}{% assign inAcademicYear = true %}{% endif %}
+    {% if postStartDate < curDate and inAcademicYear %} <tr {% if post.invited %} class="invited" {% endif %}>
         <td style="width: 11%">
           <time datetime="{{ post.date | date: " %Y"}}">
             {{ post.date | date: "%b %d" }}
@@ -84,16 +86,16 @@ layout: default
 <div class="container" id="joinus-container">
   <img id="table-collapse-img" src="assets/maximize.webp" onclick='show(1);' alt="show-table" class="center">
   <table id="seminar-schedule-old" style="display:table">
-    {% assign curDate = site.time | date: '%s' %}
+    {% assign academicYearStart = site.time | date: '%Y' | to_integer %}
+    {% assign month = site.time | date: '%m' | to_integer %}
+    {% if month < 8 %}{% assign academicYearStart = academicYearStart | minus: 1 %}{% endif %}
     {% for post in site.seminars reversed %}
-    {% assign postStartDate = post.date | date: '%s' %}
     {% assign postYear = post.date | date: '%Y' | to_integer %}
     {% assign postMonth = post.date | date: '%m' | to_integer %}
-    {% assign lastYear = site.time | date: '%Y' | minus: 1 %}
-    {% assign pastYear = site.time | date: '%Y' | minus: 2 %}
-    {% assign month = site.time | date: '%m' | to_integer %}
-    {% if month < 8 %} {% assign startMonth=0 %} {% assign endMonth=7 %} {% else %} {% assign startMonth=8 %} {% assign
-      endMonth=12 %} {% endif %} {% if postYear <=lastYear or postMonth < startMonth %} <tr {% if post.invited %}
+    {% assign inAcademicYear = false %}
+    {% if postYear == academicYearStart and postMonth >= 8 %}{% assign inAcademicYear = true %}{% endif %}
+    {% if postYear > academicYearStart %}{% assign inAcademicYear = true %}{% endif %}
+    {% unless inAcademicYear %} <tr {% if post.invited %}
       class="invited" {% endif %}>
       <td style="width: 16%">
         <time datetime="{{ post.date | date: " %Y"}}">
@@ -116,7 +118,7 @@ layout: default
         {{ post.location }}
       </td>
       </tr>
-      {% endif %}
+      {% endunless %}
       {% endfor %}
   </table>
 
