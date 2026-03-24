@@ -16,7 +16,7 @@ layout: default
         </time>
       </td>
       <td style="width: 30%">
-        {{ post.speaker }} {% if post.invited %}*{% endif %}
+        {{ post.speaker }} {% if post.invited %}<span class="invited-badge">Invited</span>{% endif %}
       </td>
       <td style="width: 38%">
         {% if post.link_abstract %}
@@ -38,7 +38,6 @@ layout: default
     {% endfor %}
   </table>
   </div>
-  <!-- <div class="seminar-footer">* Invited Talk</div> -->
 
   <h1 style="margin-left:-50pt">Past Seminars</h1>
   <table id="seminar-schedule">
@@ -60,7 +59,7 @@ layout: default
           </time>
         </td>
         <td style="width: 30%">
-          {{ post.speaker }}
+          {{ post.speaker }} {% if post.invited %}<span class="invited-badge">Invited</span>{% endif %}
         </td>
         <td style="width: 38%">
           {% if post.link_abstract %}
@@ -103,7 +102,7 @@ layout: default
         </time>
       </td>
       <td style="width: 30%">
-        {{ post.speaker }}
+        {{ post.speaker }} {% if post.invited %}<span class="invited-badge">Invited</span>{% endif %}
       </td>
       <td style="width: 38%">
         {% if post.link_abstract %}
