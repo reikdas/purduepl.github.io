@@ -1,4 +1,4 @@
 ---
 title: "Kartavya Vashishtha"
-href: https://github.com/kartva
+href: https://blog.vashishtha.in/
 ---
