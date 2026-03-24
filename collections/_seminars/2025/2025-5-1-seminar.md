@@ -5,7 +5,7 @@ title: "Programming Experience Design for a Live Computational Commons"
 time: 12p EST
 location: "LWSN 3102A/B"
 category: seminar
-invited: false
+invited: true
 link_abstract: true
 bio: "Cyrus Omar leads the Future of Programming Lab as an Assistant Professor in Computer Science and Engineering at the University of Michigan."
 ---
