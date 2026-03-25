@@ -2,7 +2,7 @@
 layout: default
 ---
 <div class="container" id="joinus-container">
-  <h1 style="margin-left:-50pt">Upcoming Seminars</h1>
+  <h1 class="page-heading">Upcoming Seminars</h1>
   <div style="overflow-x:auto;">
   <table id="seminar-schedule" style="margin-bottom:20pt">
     {% assign curDate = site.time | date: '%s' | minus: 86400 | date:'%s' %}
@@ -39,7 +39,7 @@ layout: default
   </table>
   </div>
 
-  <h1 style="margin-left:-50pt">Past Seminars</h1>
+  <h1 class="page-heading">Past Seminars</h1>
   <table id="seminar-schedule">
     {% assign curDate = site.time | date: '%s' | minus: 86400 | date:'%s' %}
     {% assign academicYearStart = site.time | date: '%Y' | to_integer %}

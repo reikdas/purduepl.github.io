@@ -433,6 +433,16 @@ div#news_items {
   padding-top: 20px
 }
 
+.page-heading {
+  margin-left: -50pt;
+}
+
+@media only screen and (max-width: 700px) {
+  .page-heading {
+    margin-left: 0;
+  }
+}
+
 div.about,
 div.facultycard,
 div.container {
