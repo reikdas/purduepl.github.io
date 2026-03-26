@@ -33,7 +33,7 @@
 
 body {
   background-image: url(../assets/cubes.webp);
-  font-family: "tablet-gothic", verdana, arial, sans-serif;
+  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
   margin-left: auto;
   margin-right: auto;
   margin-top: 0;
@@ -282,7 +282,7 @@ section.intro-content {
 }
 
 div#about p {
-  font-family: "tablet-gothic", verdana, arial, sans-serif;
+  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
   font-size: 16px;
   font-weight: 100;
   text-align: justify
