@@ -4,13 +4,16 @@ title:  "Join Us"
 category: joinus
 ---
 
-#### Current Students ####
+## Get Connected
 
-+ Subscribe to the PurPL mailing list by following the instructions: <https://service.purdue.edu/TDClient/32/Purdue/KB/ArticleDet?ID=515>.
+- Subscribe to the PurPL mailing list by following the [instructions](https://service.purdue.edu/TDClient/32/Purdue/KB/ArticleDet?ID=515) (`name_of_list` is purpl) for up-to-date announcements on our weekly seminar series.
+- Join our Slack channel either via the Purdue CS Slack or through your ECE faculty's linked Slack connection.
 
+## Current Students
 
-#### Prospective Students ###
-+ Apply to CS
-  [graduate](https://www.cs.purdue.edu/graduate/index.html) or
-  [undergraduate](https://www.cs.purdue.edu/future-students/index.html) program.
-+ Apply to ECE [graduate](https://engineering.purdue.edu/ECE/InfoFor/ProspectiveStudents) or [undergraduate](https://engineering.purdue.edu/ECE/InfoFor/ProspectiveStudents) program.
+- Attend our weekly [seminars](/seminars.html) — open to all students interested in programming languages.
+
+## Prospective Students
+
+- Apply to the CS [graduate](https://www.cs.purdue.edu/graduate/index.html) or [undergraduate](https://www.cs.purdue.edu/future-students/index.html) program.
+- Apply to the ECE [graduate](https://engineering.purdue.edu/ECE/InfoFor/ProspectiveStudents) or [undergraduate](https://engineering.purdue.edu/ECE/InfoFor/ProspectiveStudents) program.

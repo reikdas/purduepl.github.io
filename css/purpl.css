@@ -536,18 +536,14 @@ div.container {
   width: auto
 }
 
-div.joinus h4 {
-  font-size: 25px;
-  font-weight: 700
+#joinus-info ul {
+  list-style: disc;
+  margin-left: 1.5em;
+  margin-bottom: 1em;
 }
 
-div.joinus h1 {
-  margin-left: -5%
-}
-
-div.joinus ul {
-  margin-bottom: 1%;
-  margin-left: 8%
+#joinus-info li {
+  padding: 4px 0;
 }
 
 div.seminar-footer {
