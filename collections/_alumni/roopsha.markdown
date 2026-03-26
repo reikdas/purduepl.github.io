@@ -6,7 +6,7 @@ lastname: "Samanta"
 category: facultycard
 date: 2016-08-09 15:00:00
 img: assets/roopsha.webp
-href: https://www.cs.purdue.edu/homes/roopsha/
+href: https://www.linkedin.com/in/roopsha-samanta-9821b432a/
 ---
 
 Program verification, analysis, repair and synthesis.

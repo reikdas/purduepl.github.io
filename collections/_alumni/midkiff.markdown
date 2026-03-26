@@ -7,6 +7,7 @@ category: facultycard
 date: 2016-08-09 19:00:00
 img: assets/midkiff.webp
 href: https://engineering.purdue.edu/~smidkiff/
+employer: "Retired"
 ---
 
 Optimizing compilers, Interaction between compilers and other system

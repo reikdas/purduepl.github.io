@@ -150,36 +150,65 @@ h1 {
 
 ul.photo-list {
   padding-top: 15px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  list-style: none;
+}
+
+@media only screen and (max-width: 700px) {
+  ul.photo-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  ul.photo-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 ul.photo-list li {
-  float: left;
-  height: 160px;
   list-style: none;
-  margin: 1pt;
+  margin: 0;
   padding: 0;
-  width: 120px
+  position: relative;
 }
 
 ul.name-list {
   margin-left: auto;
   margin-right: auto;
   padding-top: 15px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  list-style: none;
+  columns: 2;
+  column-gap: 24px;
+}
+
+@media only screen and (max-width: 700px) {
+  ul.name-list {
+    columns: 1;
+  }
 }
 
 ul.name-list li {
-  float: left;
-  height: 40px;
   list-style: none;
-  margin: 1pt;
-  padding: 0;
-  width: 120px
+  margin: 0;
+  padding: 4px 0;
+  break-inside: avoid;
+}
+
+ul.name-list li a {
+  text-decoration: none;
+  color: #333;
+}
+
+ul.name-list li a:hover {
+  color: #7a259a;
+}
+
+ul.name-list .alumni-employer {
+  color: #777;
+  font-size: 90%;
 }
 
 h2 {
@@ -570,26 +599,31 @@ div.abstract-header {
 
 ul.photo-list img,
 ul.name-list img {
-  height: 120px;
-  width: 120px
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
 }
 
-ul.photo-list a .photo-caption,
-ul.name-list a .photo-caption {
+ul.photo-list a {
+  display: block;
+  position: relative;
+}
+
+ul.photo-list a .photo-caption {
   background-color: rgba(30, 0, 45, .65);
   bottom: 0;
   color: #fff;
   font-size: 75%;
   font-weight: 300;
-  height: 40px;
   left: 0;
-  line-height: 1;
+  line-height: 1.2;
   padding: .25em;
   position: absolute;
   right: 0;
   text-align: center;
   z-index: 100
 }
+
 
 div.cards-title h1,
 div.wrapper h1 {
