@@ -1,17 +1,28 @@
-#!/usr/bin/env python3
-import os
-import gspread
+#!/usr/bin/env -S uv run
+# /// script
+# requires-python = ">=3.9"
+# dependencies = [
+#     "gspread",
+#     "python-dateutil",
+# ]
+# ///
+import argparse
 import json
-from dateutil.parser import *
+import os
+
+import gspread
+from dateutil.parser import parse
 
 print(
     "Warning, don't run a script from the internet that you haven't read before... certainly don't give it write permissions - Patrick, August 22, 2023"
 )
 
+parser = argparse.ArgumentParser(description="Scrape seminar data from a Google Sheet")
+parser.add_argument("url", help="URL of the Google Sheet")
+args = parser.parse_args()
+
 gc = gspread.service_account()
-google_sheet_url = input()
-print(google_sheet_url)
-sh = gc.open_by_url(google_sheet_url)
+sh = gc.open_by_url(args.url)
 print(sh.title)
 print(sh.sheet1)
 
@@ -23,8 +34,6 @@ for record in records:
     assert "Presenter" in record.keys()
     assert "Title" in record.keys()
     assert "Location" in record.keys()
-
-print("The unfiltered list of records")
 
 
 def date_filter(x):
@@ -40,29 +49,34 @@ def presenter_filter(x):
     result = x["Presenter"] != "" and x["Presenter"] != "N/A"
     if not result:
         print("Presenter filtered out:\n", json.dumps(x, indent=2))
-
     return result
+
 
 def spring_break_filter(x):
     result = x["Location"] != "Bahamas" and x["Title"] != "Spring Break"
-
     if not result:
         print("Spring break filtered out:\n", json.dumps(x, indent=2))
-
     return result
 
 
+print("The unfiltered list of records")
 print(json.dumps(records, indent=2))
+
 records = filter(date_filter, records)
 records = filter(presenter_filter, records)
 records = filter(spring_break_filter, records)
-""" print(json.dumps(list(records), indent=2)) """
+
 for record in list(records):
     date = parse(record["Date"])
-    presenter = record["Presenter"]
-    title = record["Title"]
-    location = record["Location"]
-    file_name = f"{date.year}/{date.year}-{date.month}-{date.day}-seminar.md"
+    presenter = record["Presenter"].strip()
+    title = record["Title"].strip()
+    location = record["Location"].strip()
+
+    year_dir = str(date.year)
+    if not os.path.exists(year_dir):
+        os.makedirs(year_dir)
+
+    file_name = f"{year_dir}/{date.year}-{date.month}-{date.day}-seminar.md"
     file_contents = f"""---
 layout: post
 speaker: "{presenter}"
@@ -79,4 +93,5 @@ TBA
     print(file_name)
     print(file_contents)
     if not os.path.exists(file_name):
-        open(file_name, mode="w").write(file_contents)
+        with open(file_name, mode="w") as f:
+            f.write(file_contents)
