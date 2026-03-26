@@ -33,6 +33,7 @@ jobs:
         with:
           configPath: .github/lighthouse/lighthouserc.json
           uploadArtifacts: true
+          artifactName: lighthouse-results-desktop
 
   lighthouse-mobile:
     name: Lighthouse Audit (Mobile)
@@ -59,3 +60,4 @@ jobs:
         with:
           configPath: .github/lighthouse/lighthouserc-mobile.json
           uploadArtifacts: true
+          artifactName: lighthouse-results-mobile
