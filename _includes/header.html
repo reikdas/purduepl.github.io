@@ -21,6 +21,7 @@
     <meta property="og:url" content="{{ site.url }}{{ page.url }}">
     <meta property="og:type" content="website">
     <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+    <script type="text/javascript" src="/assets/js/scripts.js" defer></script>
   </head>
 
   <body>
@@ -29,7 +30,7 @@
         <div class="logo-container">
           <a href="{{ site.baseurl }}/index.html">
             <img src="{{ site.baseurl }}/assets/banner.webp" width="476"
-              height="420" alt="logo" decoding="async">
+              height="420" alt="logo" decoding="async" fetchpriority="high">
           </a>
         </div>
         <div class="logo-title">

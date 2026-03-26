@@ -6,6 +6,15 @@ page_title: Seminars
   <h1 class="page-heading">Upcoming Seminars</h1>
   <div class="overflow-x">
   <table id="seminar-schedule">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Speaker</th>
+        <th>Title</th>
+        <th>Location</th>
+      </tr>
+    </thead>
+    <tbody>
     {% assign curDate = site.time | date: '%s' | minus: 86400 | date:'%s' %}
     {% for post in site.seminars %}
     {% assign postStartDate = post.date | date: '%s' %}
@@ -37,11 +46,21 @@ page_title: Seminars
     </tr>
     {% endif %}
     {% endfor %}
+  </tbody>
   </table>
   </div>
 
   <h1 class="page-heading">Past Seminars</h1>
   <table id="seminar-schedule">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Speaker</th>
+        <th>Title</th>
+        <th>Location</th>
+      </tr>
+    </thead>
+    <tbody>
     {% assign curDate = site.time | date: '%s' | minus: 86400 | date:'%s' %}
     {% assign academicYearStart = site.time | date: '%Y' | to_integer %}
     {% assign month = site.time | date: '%m' | to_integer %}
@@ -77,6 +96,7 @@ page_title: Seminars
         </tr>
         {% endif %}
         {% endfor %}
+  </tbody>
   </table>
 
 
@@ -86,6 +106,15 @@ page_title: Seminars
 <div class="container" id="joinus-container">
   <img id="table-collapse-img" src="assets/maximize.webp" alt="show-table" class="center" decoding="async">
   <table id="seminar-schedule-old">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Speaker</th>
+        <th>Title</th>
+        <th>Location</th>
+      </tr>
+    </thead>
+    <tbody>
     {% assign academicYearStart = site.time | date: '%Y' | to_integer %}
     {% assign month = site.time | date: '%m' | to_integer %}
     {% if month < 8 %}{% assign academicYearStart = academicYearStart | minus: 1 %}{% endif %}
@@ -120,6 +149,7 @@ page_title: Seminars
       </tr>
       {% endunless %}
       {% endfor %}
+  </tbody>
   </table>
 
 </div>
