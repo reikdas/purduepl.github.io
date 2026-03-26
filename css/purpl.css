@@ -194,13 +194,21 @@ ul.name-list {
 ul.name-list li {
   list-style: none;
   margin: 0;
-  padding: 4px 0;
+  padding: 3px 0;
   break-inside: avoid;
+  font-size: 15px;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
 }
 
-ul.name-list li a {
+ul.name-list li a,
+ul.name-list li > span:first-child {
   text-decoration: none;
   color: #333;
+  text-align: left;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 ul.name-list li a:hover {
@@ -208,8 +216,12 @@ ul.name-list li a:hover {
 }
 
 ul.name-list .alumni-employer {
-  color: #777;
+  color: #999;
   font-size: 90%;
+  white-space: nowrap;
+  text-align: right;
+  margin-left: auto;
+  margin-right: 0;
 }
 
 h2 {
