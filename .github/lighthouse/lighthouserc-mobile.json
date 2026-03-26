@@ -7,14 +7,11 @@
         "/seminars.html",
         "/research.html",
         "/courses.html"
-      ],
-      "settings": {
-        "preset": "desktop"
-      }
+      ]
     },
     "assert": {
       "assertions": {
-        "categories:performance": ["error", { "minScore": 0.9 }],
+        "categories:performance": ["warn", { "minScore": 0.8 }],
         "categories:accessibility": ["warn", { "minScore": 0.8 }],
         "categories:seo": ["warn", { "minScore": 0.8 }]
       }

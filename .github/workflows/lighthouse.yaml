@@ -8,8 +8,8 @@ on:
       - master
 
 jobs:
-  lighthouse:
-    name: Lighthouse Audit
+  lighthouse-desktop:
+    name: Lighthouse Audit (Desktop)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
@@ -32,4 +32,30 @@ jobs:
         uses: treosh/lighthouse-ci-action@v12
         with:
           configPath: .github/lighthouse/lighthouserc.json
+          uploadArtifacts: true
+
+  lighthouse-mobile:
+    name: Lighthouse Audit (Mobile)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+
+      - name: Install dependencies
+        run: |
+          gem install jekyll bundler
+          bundle install
+
+      - name: Build site
+        run: bundle exec jekyll build --drafts
+
+      - name: Audit with Lighthouse
+        uses: treosh/lighthouse-ci-action@v12
+        with:
+          configPath: .github/lighthouse/lighthouserc-mobile.json
           uploadArtifacts: true
