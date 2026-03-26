@@ -4,22 +4,22 @@ page_title: Seminars
 ---
 <div class="container" id="joinus-container">
   <h1 class="page-heading">Upcoming Seminars</h1>
-  <div style="overflow-x:auto;">
-  <table id="seminar-schedule" style="margin-bottom:20pt">
+  <div class="overflow-x">
+  <table id="seminar-schedule">
     {% assign curDate = site.time | date: '%s' | minus: 86400 | date:'%s' %}
     {% for post in site.seminars %}
     {% assign postStartDate = post.date | date: '%s' %}
     {% if postStartDate >= curDate%}
     <tr {% if post.invited %} class="invited" {% endif %}>
-      <td style="width: 11%">
+      <td>
         <time datetime="{{ post.date | date: " %Y"}}">
           {{ post.date | date: "%b %d" }}
         </time>
       </td>
-      <td style="width: 30%">
+      <td>
         {{ post.speaker }} {% if post.invited %}<span class="invited-badge">Invited</span>{% endif %}
       </td>
-      <td style="width: 38%">
+      <td>
         {% if post.link_abstract %}
         <a class="post-link" href="{{ post.url }}">
           {{ post.title }}
@@ -28,7 +28,7 @@ page_title: Seminars
         {{ post.title }}
         {% endif %}
       </td>
-      <td style="width: 21%">
+      <td>
         {{ post.location }}
         {% if post.vc_link %}
         (<a href="{{ post.vc_link }}">join</a>)
@@ -54,15 +54,15 @@ page_title: Seminars
     {% if postYear == academicYearStart and postMonth >= 8 %}{% assign inAcademicYear = true %}{% endif %}
     {% if postYear > academicYearStart %}{% assign inAcademicYear = true %}{% endif %}
     {% if postStartDate < curDate and inAcademicYear %} <tr {% if post.invited %} class="invited" {% endif %}>
-        <td style="width: 11%">
+        <td>
           <time datetime="{{ post.date | date: " %Y"}}">
             {{ post.date | date: "%b %d" }}
           </time>
         </td>
-        <td style="width: 30%">
+        <td>
           {{ post.speaker }} {% if post.invited %}<span class="invited-badge">Invited</span>{% endif %}
         </td>
-        <td style="width: 38%">
+        <td>
           {% if post.link_abstract %}
           <a class="post-link" href="{{ post.url }}">
             {{ post.title }}
@@ -71,7 +71,7 @@ page_title: Seminars
           {{ post.title }}
           {% endif %}
         </td>
-        <td style="width: 21%">
+        <td>
           {{ post.location }}
         </td>
         </tr>
@@ -84,8 +84,8 @@ page_title: Seminars
 
 
 <div class="container" id="joinus-container">
-  <img id="table-collapse-img" src="assets/maximize.webp" onclick='show(1);' alt="show-table" class="center">
-  <table id="seminar-schedule-old" style="display:table">
+  <img id="table-collapse-img" src="assets/maximize.webp" alt="show-table" class="center" decoding="async">
+  <table id="seminar-schedule-old">
     {% assign academicYearStart = site.time | date: '%Y' | to_integer %}
     {% assign month = site.time | date: '%m' | to_integer %}
     {% if month < 8 %}{% assign academicYearStart = academicYearStart | minus: 1 %}{% endif %}
@@ -97,15 +97,15 @@ page_title: Seminars
     {% if postYear > academicYearStart %}{% assign inAcademicYear = true %}{% endif %}
     {% unless inAcademicYear %} <tr {% if post.invited %}
       class="invited" {% endif %}>
-      <td style="width: 16%">
+      <td>
         <time datetime="{{ post.date | date: " %Y"}}">
           {{ post.date | date: "'%y %b %d" }}
         </time>
       </td>
-      <td style="width: 30%">
+      <td>
         {{ post.speaker }} {% if post.invited %}<span class="invited-badge">Invited</span>{% endif %}
       </td>
-      <td style="width: 38%">
+      <td>
         {% if post.link_abstract %}
         <a class="post-link" href="{{ post.url }}">
           {{ post.title }}
@@ -114,7 +114,7 @@ page_title: Seminars
         {{ post.title }}
         {% endif %}
       </td>
-      <td style="width: 21%">
+      <td>
         {{ post.location }}
       </td>
       </tr>

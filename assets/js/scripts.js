@@ -1,10 +1,15 @@
-function show(n) {
-	var style = document.getElementById("seminar-schedule-old").style.display;
-	if (style == "none"){
-		document.getElementById("seminar-schedule-old").style.display = "table";
-		document.getElementById("table-collapse-img").src = "assets/minimize.webp";
-	} else{
-		document.getElementById("seminar-schedule-old").style.display = "none";
-		document.getElementById("table-collapse-img").src = "assets/maximize.webp";
+document.addEventListener("DOMContentLoaded", function () {
+	var toggleImg = document.getElementById("table-collapse-img");
+	if (toggleImg) {
+		toggleImg.addEventListener("click", function () {
+			var table = document.getElementById("seminar-schedule-old");
+			if (table.style.display === "none") {
+				table.style.display = "table";
+				toggleImg.src = "assets/minimize.webp";
+			} else {
+				table.style.display = "none";
+				toggleImg.src = "assets/maximize.webp";
+			}
+		});
 	}
-}
+});

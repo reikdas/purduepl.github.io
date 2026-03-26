@@ -10,7 +10,7 @@ layout: index
   </div>
 
   <div class="wrapper" id="news">
-    <h1>News <a class="feed" href="feed.xml"> <img src="assets/rss-32.ico" width="32" height="32" alt="rss feed icon"></a></h1>
+    <h1>News <a class="feed" href="feed.xml"> <img src="assets/rss-32.ico" width="32" height="32" alt="rss feed icon" decoding="async"></a></h1>
     <div id="news_items">
       <ul>
         {% for post in site.categories.news limit:8 %}
@@ -34,7 +34,7 @@ layout: index
         {% for professor in site.professors reversed %}
         <li>
           <a href="{{ professor.href }}">
-            <img src="{{ professor.img }}" alt="{{ professor.title }}" loading="lazy" />
+            <img src="{{ professor.img }}" alt="{{ professor.title }}" loading="lazy" decoding="async" />
             <span class="photo-caption">{{ professor.firstname }}<br /> {{ professor.lastname}}
             </span>
           </a>
@@ -45,7 +45,7 @@ layout: index
 
     <!-- post docs-->
     <div class="cards-title" id="postdocs">
-      <h1 style="margin-top: 15px">Postdocs</h1>
+      <h1 class="section-heading">Postdocs</h1>
       <ul class="photo-list">
         {% for postdoc in site.postdocs %}
         <li>
@@ -56,9 +56,9 @@ layout: index
               {% endif %}
 
               {% if postdoc.img %}
-              <img src="{{ postdoc.img }}" alt="{{ postdoc.title }}" loading="lazy" />
+              <img src="{{ postdoc.img }}" alt="{{ postdoc.title }}" loading="lazy" decoding="async" />
               {% else %}
-              <img src="assets/anonymous-avatar.webp" alt="{{ postdoc.title }}" loading="lazy" />
+              <img src="assets/anonymous-avatar.webp" alt="{{ postdoc.title }}" loading="lazy" decoding="async" />
               {% endif %}
 
               <span class="photo-caption">{{ postdoc.title }}</span>
@@ -70,7 +70,7 @@ layout: index
 
     <!-- grad students -->
     <div class="cards-title" id="students">
-      <h1 style="margin-top: 15px">Grad Students</h1>
+      <h1 class="section-heading">Grad Students</h1>
       <ul class="photo-list">
         {% for student in site.students %}
         <li>
@@ -81,9 +81,9 @@ layout: index
               {% endif %}
 
               {% if student.img %}
-              <img src="{{ student.img }}" alt="{{ student.title }}" loading="lazy" />
+              <img src="{{ student.img }}" alt="{{ student.title }}" loading="lazy" decoding="async" />
               {% else %}
-              <img src="assets/anonymous-avatar.webp" alt="{{ student.title }}" loading="lazy" />
+              <img src="assets/anonymous-avatar.webp" alt="{{ student.title }}" loading="lazy" decoding="async" />
               {% endif %}
 
               <span class="photo-caption">{{ student.title }}</span>
@@ -95,7 +95,7 @@ layout: index
 
     <!-- undergrads -->
     <div class="cards-title" id="undergrads">
-      <h1 style="margin-top: 15px">Undergraduates</h1>
+      <h1 class="section-heading">Undergraduates</h1>
       <ul class="photo-list">
         {% for undergrad in site.undergrads %}
         <li>
@@ -106,9 +106,9 @@ layout: index
               {% endif %}
 
               {% if undergrad.img %}
-              <img src="{{ undergrad.img }}" alt="{{ undergrad.title }}" loading="lazy" />
+              <img src="{{ undergrad.img }}" alt="{{ undergrad.title }}" loading="lazy" decoding="async" />
               {% else %}
-              <img src="assets/anonymous-avatar.webp" alt="{{ undergrad.title }}" loading="lazy" />
+              <img src="assets/anonymous-avatar.webp" alt="{{ undergrad.title }}" loading="lazy" decoding="async" />
               {% endif %}
               
               <span class="photo-caption">{{ undergrad.title }}</span>
@@ -120,7 +120,7 @@ layout: index
 
     <!-- alumni -->
     <div class="cards-title" id="alumni">
-      <h1 style="margin-top: 15px;margin-right: 50%">Alumni</h1>
+      <h1 class="section-heading">Alumni</h1>
       <ul class="name-list">
         {% for alumni in site.alumni %}
         <li>

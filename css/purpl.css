@@ -112,13 +112,19 @@ div.logo-title {
 
 h2,
 h3 {
-  color: #111;
+  color: #333;
   font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
-  font-size: 275px;
-  font-weight: 700;
-  letter-spacing: -1px;
-  line-height: 1;
-  text-align: center
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  line-height: 1.3;
+}
+
+h2 {
+  font-size: 1.3em;
+}
+
+h3 {
+  font-size: 1.1em;
 }
 
 h1,
@@ -131,21 +137,16 @@ h6 {
 }
 
 h1 {
-  background: #2d2d2d;
-  background-color: #2d2d2d;
-  border-radius: 4px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  color: rgba(255, 255, 255, 0.9);
-  display: inline-block;
+  color: #7a259a;
   font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
-  letter-spacing: .1em;
-  margin-bottom: 0;
-  margin-left: -15%;
-  margin-top: 0;
-  padding: .5em 1em;
-  text-align: center;
-  text-shadow: -1px -1px 1px #161616, 2px 2px 1px #363636;
-  text-transform: uppercase
+  font-size: 1.6em;
+  font-weight: 600;
+  letter-spacing: .05em;
+  margin-bottom: 0.5em;
+  margin-top: 1em;
+  text-transform: uppercase;
+  border-bottom: 2px solid #e0d4e6;
+  padding-bottom: 0.3em;
 }
 
 ul.photo-list {
@@ -463,13 +464,7 @@ div#news_items {
 }
 
 .page-heading {
-  margin-left: -50pt;
-}
-
-@media only screen and (max-width: 700px) {
-  .page-heading {
-    margin-left: 0;
-  }
+  margin-left: 0;
 }
 
 div.about,
@@ -627,8 +622,29 @@ ul.photo-list a .photo-caption {
 
 div.cards-title h1,
 div.wrapper h1 {
-  margin-left: -55px;
   text-transform: uppercase
+}
+
+.section-heading {
+  margin-top: 15px;
+}
+
+.overflow-x {
+  overflow-x: auto;
+}
+
+.video-embed {
+  margin-top: 15pt;
+}
+
+.error-page {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.courses-wrapper {
+  overflow-x: auto;
+  margin-top: 20pt;
 }
 
 div.facultycard img,
@@ -639,6 +655,20 @@ div.facultycard img,
   margin: auto;
   width: 150px
 }
+
+#seminar-schedule {
+  margin-bottom: 20pt;
+}
+
+#seminar-schedule td:nth-child(1) { width: 11%; }
+#seminar-schedule td:nth-child(2) { width: 30%; }
+#seminar-schedule td:nth-child(3) { width: 38%; }
+#seminar-schedule td:nth-child(4) { width: 21%; }
+
+#seminar-schedule-old td:nth-child(1) { width: 16%; }
+#seminar-schedule-old td:nth-child(2) { width: 30%; }
+#seminar-schedule-old td:nth-child(3) { width: 38%; }
+#seminar-schedule-old td:nth-child(4) { width: 21%; }
 
 #seminar-schedule,
 #seminar-schedule-old {

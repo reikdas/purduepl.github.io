@@ -4,11 +4,9 @@ page_title: Courses
 ---
 <div class="container">
     <h1 class="page-heading">Courses</h1>
-    <div style="overflow-x:auto;">
-    <div style="margin-top: 20pt" id="courses-table">
+    <div class="courses-wrapper" id="courses-table">
     {% for post in site.courses %}
       {{ post.content }}
     {% endfor %}
-    </div>
     </div>
 </div>
