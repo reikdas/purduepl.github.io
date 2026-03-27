@@ -21,7 +21,7 @@ page_title: Seminars
     {% if postStartDate >= curDate%}
     <tr {% if post.invited %} class="invited" {% endif %}>
       <td>
-        <time datetime="{{ post.date | date: " %Y"}}">
+        <time datetime="{{ post.date | date: "%Y-%m-%d" }}">
           {{ post.date | date: "%b %d" }}
         </time>
       </td>
@@ -74,7 +74,7 @@ page_title: Seminars
     {% if postYear > academicYearStart %}{% assign inAcademicYear = true %}{% endif %}
     {% if postStartDate < curDate and inAcademicYear %} <tr {% if post.invited %} class="invited" {% endif %}>
         <td>
-          <time datetime="{{ post.date | date: " %Y"}}">
+          <time datetime="{{ post.date | date: "%Y-%m-%d" }}">
             {{ post.date | date: "%b %d" }}
           </time>
         </td>
@@ -104,7 +104,9 @@ page_title: Seminars
 
 
 <div class="container" id="joinus-container">
-  <img id="table-collapse-img" src="assets/maximize.webp" alt="show-table" class="center" decoding="async">
+  <button id="table-collapse-btn" class="center" aria-label="Show older seminars" style="background: none; border: none; cursor: pointer; padding: 0;">
+    <img id="table-collapse-img" src="assets/maximize.webp" alt="Show older seminars" decoding="async">
+  </button>
   <table id="seminar-schedule-old">
     <thead>
       <tr>
@@ -127,7 +129,7 @@ page_title: Seminars
     {% unless inAcademicYear %} <tr {% if post.invited %}
       class="invited" {% endif %}>
       <td>
-        <time datetime="{{ post.date | date: " %Y"}}">
+        <time datetime="{{ post.date | date: "%Y-%m-%d" }}">
           {{ post.date | date: "'%y %b %d" }}
         </time>
       </td>

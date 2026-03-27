@@ -1,5 +1,5 @@
 ---
 title: "Julia Belyakova"
-img: assets/JuliaB.jpg
+img: assets/JuliaB.webp
 href: https://julbinb.github.io/
 ---

@@ -5,7 +5,7 @@ firstname: "Yi"
 lastname: "Ding"
 category: facultycard
 date: 2023-09-27 20:00:00
-img: assets/yiding.jpg
+img: assets/yiding.webp
 href: https://y-ding.github.io/
 ---
 

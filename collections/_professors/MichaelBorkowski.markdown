@@ -5,6 +5,6 @@ firstname: "Michael"
 lastname: "Borkowski"
 category: facultycard
 date: 2024-08-18 23:00:00
-img: assets/Michael_Borkowski.jpg
+img: assets/Michael_Borkowski.webp
 href: https://michaelborkowski.github.io/
 ---

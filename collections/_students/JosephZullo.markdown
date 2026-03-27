@@ -1,4 +1,4 @@
 ---
 title: "Joseph Zullo"
-img: assets/JosephZullo.jpg
+img: assets/JosephZullo.webp
 ---

@@ -1,5 +1,5 @@
 ---
 title: "Raghav Malik"
-img: assets/Raghav-Malik.jpeg
+img: assets/Raghav-Malik.webp
 href: https://raghav198.github.io
 ---
